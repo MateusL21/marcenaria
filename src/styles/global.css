@@ -1,0 +1,91 @@
+@import './variables.css';
+@import './reset.css';
+
+/* === Estilos Globais === */
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* === Tipografia base === */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-primary-dark);
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+}
+
+p {
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-muted);
+}
+
+/* === Links === */
+
+a {
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* === Botões — foco visível === */
+
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* === Seções — compensar header fixo === */
+
+section[id] {
+  scroll-margin-top: var(--header-height);
+}
+
+/* === Seleção de texto === */
+
+::selection {
+  background-color: var(--color-secondary);
+  color: var(--color-primary-dark);
+}
+
+/* === Responsividade tipográfica === */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-lg);
+  }
+}

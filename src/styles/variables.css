@@ -1,0 +1,85 @@
+:root {
+  /* === Paleta Principal === */
+  --color-primary: #5C3D2E;         /* Marrom madeira escuro */
+  --color-primary-dark: #3E2723;    /* Marrom profundo */
+  --color-primary-light: #8D6E63;   /* Marrom suave */
+  --color-secondary: #D4A574;       /* Madeira clara / caramelo */
+  --color-accent: #B8860B;          /* Dourado terroso */
+
+  /* === Neutros === */
+  --color-background: #FAF8F5;      /* Off-white quente */
+  --color-surface: #FFFFFF;         /* Branco puro (cards) */
+  --color-surface-alt: #F5F0EB;    /* Superfície alternativa */
+  --color-text: #2C2C2C;           /* Grafite escuro */
+  --color-text-muted: #6B6B6B;     /* Texto secundário */
+  --color-text-light: #FFFFFF;     /* Texto sobre fundo escuro */
+  --color-border: #E8E2DC;         /* Bordas sutis */
+
+  /* === Overlay === */
+  --color-overlay: rgba(44, 44, 44, 0.7);
+  --color-overlay-light: rgba(44, 44, 44, 0.4);
+
+  /* === Tipografia === */
+  --font-primary: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-md: 1.125rem;   /* 18px */
+  --font-size-lg: 1.25rem;    /* 20px */
+  --font-size-xl: 1.5rem;     /* 24px */
+  --font-size-2xl: 2rem;      /* 32px */
+  --font-size-3xl: 2.5rem;    /* 40px */
+  --font-size-4xl: 3rem;      /* 48px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+
+  /* === Espaçamento === */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+  --spacing-3xl: 4rem;     /* 64px */
+  --spacing-4xl: 6rem;     /* 96px */
+
+  /* === Layout === */
+  --container-width: 1200px;
+  --container-padding: var(--spacing-lg);
+  --header-height: 80px;
+
+  /* === Border Radius === */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* === Sombras === */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 12px 36px rgba(0, 0, 0, 0.15);
+
+  /* === Transições === */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* === Breakpoints (referência para media queries) ===
+   Mobile:  < 576px
+   Tablet:  ≥ 768px
+   Desktop: ≥ 1024px
+   Wide:    ≥ 1440px
+=== */
