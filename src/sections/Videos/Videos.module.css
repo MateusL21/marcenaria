@@ -1,0 +1,18 @@
+.videos {
+  padding: var(--spacing-4xl) 0;
+  background-color: var(--color-surface-alt);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+}
+
+/* === Responsivo === */
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

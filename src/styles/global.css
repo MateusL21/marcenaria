@@ -47,18 +47,26 @@ a:hover {
   color: var(--color-primary);
 }
 
-a:focus-visible {
+/* === Foco visível — todos os elementos interativos === */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible,
+[role="button"]:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
 
-/* === Botões — foco visível === */
-
-button:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
+/* Foco visível em fundo escuro (sobrepõe com maior contraste) */
+.dark-bg a:focus-visible,
+.dark-bg button:focus-visible,
+footer a:focus-visible,
+footer button:focus-visible {
+  outline-color: var(--color-secondary);
 }
 
 /* === Seções — compensar header fixo === */
@@ -74,6 +82,26 @@ section[id] {
   color: var(--color-primary-dark);
 }
 
+/* === Skip to content (acessibilidade) === */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--spacing-md);
+  z-index: 9999;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--spacing-md);
+}
+
 /* === Responsividade tipográfica === */
 
 @media (max-width: 768px) {
@@ -86,6 +114,20 @@ section[id] {
   }
 
   h3 {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --container-padding: var(--spacing-md);
+  }
+
+  h1 {
+    font-size: var(--font-size-xl);
+  }
+
+  h2 {
     font-size: var(--font-size-lg);
   }
 }
