@@ -65,7 +65,7 @@
 
 @media (max-width: 576px) {
   .grid {
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr));
+    grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
 
@@ -76,11 +76,5 @@
   .filterBtn {
     padding: var(--spacing-xs) var(--spacing-md);
     font-size: var(--font-size-xs);
-  }
-}
-
-@media (max-width: 360px) {
-  .grid {
-    grid-template-columns: 1fr;
   }
 }

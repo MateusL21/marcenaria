@@ -16,7 +16,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
           loading="lazy"
         />
         <div className={styles.overlay}>
-          <span className={styles.category}>{project.category}</span>
           <h3 className={styles.title}>{project.title}</h3>
           <p className={styles.description}>{project.description}</p>
         </div>

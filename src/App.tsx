@@ -4,6 +4,7 @@ import { About } from './sections/About/About'
 import { ServicesLazy } from './sections/Services/ServicesLazy'
 import { Portfolio } from './sections/Portfolio/Portfolio'
 import { Videos } from './sections/Videos/Videos'
+import { ExtraServices } from './sections/ExtraServices/ExtraServices'
 import { Contact } from './sections/Contact/Contact'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <ServicesLazy />
         <Portfolio />
         <Videos />
+        <ExtraServices />
         <Contact />
       </main>
       <Footer />
