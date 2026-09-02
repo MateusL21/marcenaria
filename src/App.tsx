@@ -1,9 +1,7 @@
-import { Header } from './components/layout/Header/Header'
 import { Footer } from './components/layout/Footer/Footer'
 import { WhatsAppButton } from './components/common/WhatsAppButton/WhatsAppButton'
-import { Hero } from './sections/Hero/Hero'
 import { About } from './sections/About/About'
-import { Services } from './sections/Services/Services'
+import { ServicesLazy } from './sections/Services/ServicesLazy'
 import { Portfolio } from './sections/Portfolio/Portfolio'
 import { Videos } from './sections/Videos/Videos'
 import { Contact } from './sections/Contact/Contact'
@@ -14,11 +12,9 @@ function App() {
       <a href="#main-content" className="skip-link">
         Pular para o conteúdo principal
       </a>
-      <Header />
       <main id="main-content">
-        <Hero />
         <About />
-        <Services />
+        <ServicesLazy />
         <Portfolio />
         <Videos />
         <Contact />

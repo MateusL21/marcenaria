@@ -43,7 +43,6 @@ export const socialLinks: SocialLink[] = [
 /* === Navegação === */
 
 export const navItems: NavItem[] = [
-  { label: 'Início', href: '#inicio' },
   { label: 'Sobre', href: '#sobre' },
   { label: 'Serviços', href: '#servicos' },
   { label: 'Projetos', href: '#projetos' },

@@ -1,83 +1,139 @@
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: url('/images/placeholders/hero.jpg');
+  background-image: url('/images/projects/imagem_donos.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
+/* Gradiente elegante em vez de overlay chapado — mais profundidade */
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: var(--color-overlay);
+  background: linear-gradient(
+    180deg,
+    rgba(30, 20, 15, 0.55) 0%,
+    rgba(30, 20, 15, 0.35) 45%,
+    rgba(30, 20, 15, 0.65) 100%
+  );
 }
 
 .content {
   position: relative;
   z-index: 1;
-  max-width: 720px;
   padding: var(--spacing-2xl) var(--spacing-lg);
-}
-
-.title {
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-light);
-  line-height: var(--line-height-tight);
-  margin-bottom: var(--spacing-lg);
-}
-
-.subtitle {
-  font-size: var(--font-size-lg);
-  color: rgba(255, 255, 255, 0.85);
-  line-height: var(--line-height-relaxed);
-  margin-bottom: var(--spacing-2xl);
-}
-
-.actions {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: var(--spacing-md);
+  animation: fadeIn 1.2s ease both;
+}
+
+/* Assinatura da marca — tipografia serifada, refinada e discreta */
+.brandmark {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 6vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.02em;
+  color: var(--color-text-light);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+}
+
+.location {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: var(--spacing-md);
+}
+
+/* Linha fina decorativa acima da localização */
+.location::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 1px;
+  background-color: var(--color-secondary);
+}
+
+/* Indicador de scroll animado */
+.scrollHint {
+  position: absolute;
+  bottom: var(--spacing-2xl);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-full);
+  display: flex;
   justify-content: center;
-  gap: var(--spacing-lg);
-  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+.scrollDot {
+  width: 4px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.9);
+  animation: scrollBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(12px);
+    opacity: 0.3;
+  }
 }
 
 /* === Responsivo === */
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 70vh;
-  }
-
-  .title {
-    font-size: var(--font-size-2xl);
-  }
-
-  .subtitle {
-    font-size: var(--font-size-base);
-  }
-
-  .actions {
-    flex-direction: column;
-    gap: var(--spacing-md);
+    min-height: 82vh;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 576px) {
   .hero {
-    min-height: 60vh;
-  }
-
-  .title {
-    font-size: var(--font-size-xl);
+    min-height: 72vh;
   }
 
   .content {
     padding: var(--spacing-xl) var(--spacing-md);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content,
+  .scrollDot {
+    animation: none;
   }
 }

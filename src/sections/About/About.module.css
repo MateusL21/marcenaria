@@ -3,85 +3,151 @@
   background-color: var(--color-background);
 }
 
-.content {
+/* === Composição editorial === */
+.composition {
+  margin: 0;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.portraits {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-3xl);
-  align-items: center;
+  gap: var(--spacing-lg);
+  align-items: end;
 }
 
-.imageWrapper {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 4 / 5;
-}
-
-.text {
+.portrait {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
 }
 
-.name {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary-dark);
+/* Retrato único de pai e filho — mock editorial via camadas de gradiente.
+   Substitua o background por uma imagem real quando disponível. */
+.photo {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  background-color: var(--color-surface-alt);
+  background-image: linear-gradient(
+      145deg,
+      rgba(141, 110, 99, 0.15),
+      rgba(92, 61, 46, 0.35)
+    ),
+    url('/images/projects/imagem_donos.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05) contrast(1.02);
+  transition:
+    transform var(--transition-slow),
+    box-shadow var(--transition-slow);
 }
 
-.role {
-  font-size: var(--font-size-base);
-  color: var(--color-primary-light);
-  font-weight: var(--font-weight-medium);
+.photo::after {
+  /* Vinheta editorial + tom quente de madeira */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 40%,
+      rgba(62, 39, 35, 0.35) 100%
+    ),
+    radial-gradient(
+      circle at 50% 30%,
+      transparent 55%,
+      rgba(30, 20, 15, 0.35) 100%
+    );
 }
 
-.description {
-  font-size: var(--font-size-base);
-  color: var(--color-text-muted);
-  line-height: var(--line-height-relaxed);
+.portrait:hover .photo,
+.photo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(62, 39, 35, 0.28);
 }
 
-.highlights {
+/* Textura sutil de grão fotográfico */
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.06;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.9) 0.5px,
+    transparent 0.6px
+  );
+  background-size: 3px 3px;
+  pointer-events: none;
+}
+
+/* === Legendas === */
+.caption {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-md);
+  align-items: center;
+  text-align: center;
+  gap: 2px;
 }
 
-.highlightItem {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  font-size: var(--font-size-sm);
+.name {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-dark);
+  line-height: var(--line-height-tight);
+}
+
+.relation {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: var(--font-size-xs);
+  color: var(--color-accent);
+}
+
+/* === Introdução === */
+.intro {
+  margin-top: var(--spacing-2xl);
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
   color: var(--color-text);
 }
 
-.checkIcon {
-  color: var(--color-primary);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-md);
+/* === Responsivo === */
+@media (max-width: 576px) {
+  .portraits {
+    gap: var(--spacing-md);
+  }
+
+  .photo {
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-md);
+  }
+
+  .name {
+    font-size: var(--font-size-xl);
+  }
+
+  .intro {
+    font-size: var(--font-size-md);
+    margin-top: var(--spacing-xl);
+  }
 }
 
-/* === Responsivo === */
-
-@media (max-width: 768px) {
-  .content {
+@media (max-width: 360px) {
+  .portraits {
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-md);
   }
 
-  .imageWrapper {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .image {
-    aspect-ratio: 1 / 1;
+  .photo {
+    aspect-ratio: 3 / 2;
   }
 }

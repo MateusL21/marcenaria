@@ -3,30 +3,25 @@ import type { PortfolioVideo } from '../types'
 export const videos: PortfolioVideo[] = [
   {
     id: 1,
-    title: 'Detalhes de uma Cozinha Planejada',
+    title: 'Nosso Trabalho em Ação',
     description:
-      'Veja os detalhes de acabamento, ferragens e aproveitamento de espaço em um projeto de cozinha sob medida.',
-    poster: '/images/placeholders/cozinha.jpg',
+      'Acompanhe de perto o processo de marcenaria e o cuidado em cada etapa do projeto.',
+    src: '/videos/marcenaria-1.mp4',
+    poster: '/images/projects/projeto-2.jpeg',
   },
   {
     id: 2,
-    title: 'Funcionamento de Gavetas e Portas',
+    title: 'Detalhes e Acabamento',
     description:
-      'Demonstração do sistema de gavetas com fechamento suave e portas com dobradiças de alta performance.',
-    poster: '/images/placeholders/closet.jpg',
+      'Veja os detalhes de acabamento e a qualidade das estruturas de madeira que produzimos.',
+    src: '/videos/marcenaria-2.mp4',
+    poster: '/images/projects/projeto-4.jpeg',
   },
   {
     id: 3,
-    title: 'Antes e Depois de um Ambiente',
+    title: 'Jardim Vertical em Madeira',
     description:
-      'Transformação completa de uma sala de estar com painel ripado, rack suspenso e iluminação integrada.',
-    poster: '/images/placeholders/painel-sala.jpg',
-  },
-  {
-    id: 4,
-    title: 'Detalhes de Acabamento',
-    description:
-      'Processo de laminação, pintura e montagem de um móvel sob medida com acabamento premium.',
-    poster: '/images/placeholders/home-office.jpg',
+      'Floreira/jardim vertical em madeira tratada, unindo marcenaria e paisagismo para valorizar áreas externas.',
+    poster: '/images/projects/marcearia8.jpg',
   },
 ]

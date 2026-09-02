@@ -1,24 +1,283 @@
 .services {
-  padding: var(--spacing-4xl) 0;
-  background-color: var(--color-surface-alt);
+  position: relative;
+  /* Padding vertical fluido: encolhe naturalmente em telas menores */
+  padding: clamp(2.5rem, 8vw, 4.5rem) 0 clamp(1.75rem, 5vw, 3rem);
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-light);
+  overflow: hidden;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-xl);
+/* Textura sutil de profundidade no fundo escuro */
+.services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(212, 165, 116, 0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(184, 134, 11, 0.08),
+      transparent 40%
+    );
+  pointer-events: none;
 }
 
-/* === Responsivo === */
+/* === Estado de carregamento (lazy) === */
+.loading {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  min-height: 70vh;
+  color: rgba(255, 255, 255, 0.7);
+}
 
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--color-secondary);
+  border-radius: var(--radius-full);
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
-@media (max-width: 576px) {
-  .grid {
-    grid-template-columns: 1fr;
+/* SectionTitle é escura por padrão — clareamos aqui via seletor de descendência */
+.services :global(h2) {
+  color: var(--color-text-light);
+}
+
+.services :global(p) {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* === Blocos === */
+.blocks {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.block {
+  position: relative;
+  /* Sobreposição editorial suave entre serviços — dá respiro sem perder o
+     efeito de continuidade. Fluida: mais leve conforme a tela diminui. */
+  margin-block: clamp(-4vh, -3vw, -1.5vh);
+  opacity: 0;
+  transform: translateY(48px);
+  transition:
+    opacity 900ms ease,
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.block:first-child {
+  margin-top: 0;
+}
+
+.block:last-child {
+  margin-bottom: 0;
+}
+
+.block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Palco: ferramenta 3D + texto sobreposto === */
+.stage {
+  position: relative;
+  width: 100%;
+}
+
+/* Número grande decorativo (editorial) */
+.index {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 12vw, 9rem);
+  line-height: 1;
+  font-weight: var(--font-weight-bold);
+  color: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Texto descritivo sobreposto ao palco, colado à ferramenta.
+   pointer-events: none deixa o arrasto do modelo passar por baixo. */
+.overlay {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 6%;
+  width: min(90%, 480px);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  /* Mais respiro entre tagline, título, descrição e lista */
+  gap: clamp(0.5rem, 1.5vw, 0.9rem);
+  text-align: center;
+  pointer-events: none;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
+}
+
+/* Layout alternado (desktop): texto à direita nos blocos pares, à esquerda nos ímpares */
+.block .overlay {
+  left: auto;
+  right: 4%;
+  bottom: 50%;
+  transform: translateY(50%);
+  text-align: left;
+  align-items: flex-start;
+}
+
+.block.reversed .overlay {
+  right: auto;
+  left: 4%;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.tagline {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: clamp(0.72rem, 1.6vw, 0.85rem);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary) !important;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 5vw, var(--font-size-4xl));
+  line-height: var(--line-height-tight);
+  color: var(--color-text-light);
+}
+
+.description {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  line-height: var(--line-height-relaxed);
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: clamp(0.25rem, 1vw, 0.5rem) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.25rem, 0.8vw, 0.5rem);
+}
+
+.highlightItem {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  font-size: clamp(0.8rem, 1.9vw, 0.95rem);
+  line-height: var(--line-height-normal);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.highlightItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-secondary);
+  box-shadow: 0 0 12px rgba(212, 165, 116, 0.6);
+}
+
+/* === Responsivo (tablet) === */
+@media (max-width: 900px) {
+  .blocks {
+    gap: clamp(1.25rem, 4vw, 2rem);
+    margin-top: var(--spacing-lg);
+  }
+
+  .block {
+    /* Remove a sobreposição em telas médias — cada serviço ganha seu espaço */
+    margin-block: 0;
+  }
+
+  /* No tablet o texto fica centralizado embaixo, colado à ferramenta */
+  .block .overlay,
+  .block.reversed .overlay {
+    left: 50%;
+    right: auto;
+    bottom: 4%;
+    transform: translateX(-50%);
+    width: min(92%, 460px);
+    text-align: center;
+    align-items: center;
+  }
+
+  .highlightItem {
+    padding-left: 0;
+  }
+
+  .highlightItem::before {
+    display: none;
+  }
+
+  .index {
+    font-size: clamp(3rem, 16vw, 6rem);
+  }
+}
+
+/* === Responsivo (celular) — texto sai de cima do 3D e passa a fluir abaixo,
+   evitando sobreposição, cortes e aperto em telas estreitas === */
+@media (max-width: 600px) {
+  /* Aproxima os serviços: menos respiro vertical entre um bloco e outro */
+  .blocks {
+    gap: clamp(0.25rem, 2vw, 0.75rem);
+    margin-top: var(--spacing-md);
+  }
+
+  .stage {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .block .overlay,
+  .block.reversed .overlay {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+    /* Menos espaço entre o modelo 3D e seu texto → conjunto mais coeso */
+    padding: clamp(0.4rem, 2vw, 0.75rem) var(--container-padding) 0;
+    bottom: auto;
+    text-shadow: none;
+    /* Reativa interação (links/leitura) já que não sobrepõe o canvas */
+    pointer-events: auto;
+  }
+
+  .index {
+    font-size: clamp(2.5rem, 18vw, 4.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .block {
+    transition: opacity 400ms ease;
+    transform: none;
   }
 }

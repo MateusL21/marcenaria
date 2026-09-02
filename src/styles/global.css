@@ -3,6 +3,23 @@
 
 /* === Estilos Globais === */
 
+/* Impede overflow horizontal que "trava" a redução da tela em telas pequenas */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Itens de grid/flex têm min-width/min-height: auto por padrão, o que impede
+   encolher abaixo do conteúdo e gera scroll horizontal. Zeramos isso. */
+main,
+section,
+article,
+figure {
+  min-width: 0;
+}
+
 body {
   font-family: var(--font-primary);
   font-size: var(--font-size-base);

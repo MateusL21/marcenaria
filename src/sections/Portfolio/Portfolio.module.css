@@ -50,7 +50,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
   gap: var(--spacing-xl);
 }
 
@@ -58,13 +58,15 @@
 
 @media (max-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+    gap: var(--spacing-lg);
   }
 }
 
 @media (max-width: 576px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr));
+    gap: var(--spacing-md);
   }
 
   .filters {
@@ -74,5 +76,11 @@
   .filterBtn {
     padding: var(--spacing-xs) var(--spacing-md);
     font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 360px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }

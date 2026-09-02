@@ -138,5 +138,12 @@
 @media (max-width: 576px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .ctaCard,
+  .infoCard,
+  .socialCard {
+    padding: var(--spacing-xl);
   }
 }

@@ -25,13 +25,7 @@ export interface Project {
   alt: string
 }
 
-export type ProjectCategory =
-  | 'Cozinha'
-  | 'Dormitório'
-  | 'Closet'
-  | 'Sala'
-  | 'Home Office'
-  | 'Área Gourmet'
+export type ProjectCategory = 'Marcenaria'
 
 export interface PortfolioVideo {
   id: number

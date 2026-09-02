@@ -88,3 +88,23 @@
   color: var(--color-text-muted);
   line-height: var(--line-height-normal);
 }
+
+/* === Responsivo — encolhe elementos internos === */
+@media (max-width: 576px) {
+  .info {
+    padding: var(--spacing-md);
+  }
+
+  .playIcon {
+    width: 44px;
+    height: 44px;
+    font-size: var(--font-size-md);
+  }
+}
+
+@media (max-width: 360px) {
+  .playIcon {
+    width: 36px;
+    height: 36px;
+  }
+}

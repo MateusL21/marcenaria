@@ -83,5 +83,23 @@
       rgba(44, 44, 44, 0.2) 60%,
       transparent 100%
     );
+    padding: var(--spacing-md);
+  }
+}
+
+/* Telas pequenas: imagem mais compacta para caber melhor */
+@media (max-width: 576px) {
+  .imageWrapper {
+    aspect-ratio: 3 / 2;
+  }
+
+  .description {
+    -webkit-line-clamp: 1;
+  }
+}
+
+@media (max-width: 360px) {
+  .imageWrapper {
+    aspect-ratio: 16 / 10;
   }
 }

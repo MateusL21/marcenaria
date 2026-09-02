@@ -3,66 +3,67 @@ import type { Project } from '../types'
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'Cozinha Planejada Moderna',
+    title: 'Portão de Madeira Ripado',
     description:
-      'Projeto completo de cozinha com ilha central, armários superiores e inferiores em MDF lacado, bancada em quartzo e iluminação embutida.',
-    category: 'Cozinha',
-    image: '/images/placeholders/cozinha.jpg',
-    alt: 'Cozinha planejada moderna com armários em tom de madeira e bancada em quartzo',
+      'Portão de correr em madeira maciça com acabamento envernizado, ripas alinhadas e fixação reforçada, integrado ao muro e ao paisagismo.',
+    category: 'Marcenaria',
+    image: '/images/projects/projeto-2.jpeg',
+    alt: 'Portão de madeira ripada com acabamento envernizado em tom mel',
   },
   {
     id: 2,
-    title: 'Closet Sob Medida',
+    title: 'Portão Duplo com Dobradiças',
     description:
-      'Closet em L com portas de correr em espelho, gavetas com divisórias, cabideiros duplos e iluminação LED integrada.',
-    category: 'Closet',
-    image: '/images/placeholders/closet.jpg',
-    alt: 'Closet sob medida com portas de correr e organização interna completa',
+      'Portão de abrir em duas folhas com travamento em X, dobradiças robustas e acabamento escuro, unindo resistência e estética rústica.',
+    category: 'Marcenaria',
+    image: '/images/projects/projeto-3.jpeg',
+    alt: 'Portão duplo de madeira escura com dobradiças e travamento em X',
   },
   {
     id: 3,
-    title: 'Painel de Sala em Madeira',
+    title: 'Pergolado com Cobertura',
     description:
-      'Painel ripado em madeira natural com nichos assimétricos, suporte para TV 65" e sistema de iluminação indireta.',
-    category: 'Sala',
-    image: '/images/placeholders/painel-sala.jpg',
-    alt: 'Painel de sala em madeira ripada com nichos e iluminação indireta',
+      'Estrutura de pergolado em madeira tratada com cobertura translúcida, ideal para área gourmet e espaços de convivência ao ar livre.',
+    category: 'Marcenaria',
+    image: '/images/projects/projeto-4.jpeg',
+    alt: 'Pergolado de madeira com cobertura sobre área de churrasqueira',
   },
   {
     id: 4,
-    title: 'Home Office Planejado',
+    title: 'Guarda-Corpo em Madeira',
     description:
-      'Escritório completo com mesa em L, estante com nichos e portas, gaveteiro e painel organizador. Ideal para trabalho remoto.',
-    category: 'Home Office',
-    image: '/images/placeholders/home-office.jpg',
-    alt: 'Home office planejado com mesa em L e estante integrada',
+      'Guarda-corpo ripado em madeira para varanda e deck, com fixação segura e acabamento que valoriza o ambiente externo.',
+    category: 'Marcenaria',
+    image: '/images/projects/projeto-5.jpeg',
+    alt: 'Guarda-corpo de madeira ripada em varanda com deck',
   },
   {
     id: 5,
-    title: 'Dormitório Completo',
+    title: 'Cerca de Madeira Mogno',
     description:
-      'Projeto de dormitório com guarda-roupa de 6 portas, cabeceira estofada com criado-mudo integrado e cômoda sob medida.',
-    category: 'Dormitório',
-    image: '/images/placeholders/dormitorio.jpg',
-    alt: 'Dormitório completo com guarda-roupa e cabeceira em madeira',
+      'Cerca em madeira maciça com acabamento em tom mogno, ripas verticais e detalhes em pregos aparentes para um visual rústico e durável.',
+    category: 'Marcenaria',
+    image: '/images/projects/projeto-6.jpeg',
+    alt: 'Cerca de madeira em tom mogno com ripas verticais',
   },
   {
     id: 6,
-    title: 'Área Gourmet Planejada',
+    title: 'Cercamento e Portão Rústico',
     description:
-      'Espaço gourmet com bancada em granito, armários em madeira de demolição, adega climatizada e churrasqueira integrada.',
-    category: 'Área Gourmet',
-    image: '/images/placeholders/area-gourmet.jpg',
-    alt: 'Área gourmet planejada com bancada em granito e armários em madeira',
+      'Conjunto de cercamento e portão em madeira maciça envernizada, com encaixes resistentes e acabamento sob medida para áreas externas.',
+    category: 'Marcenaria',
+    image: '/images/projects/projeto-7.jpeg',
+    alt: 'Cerca e portão de madeira maciça com acabamento escuro',
+  },
+  {
+    id: 7,
+    title: 'Paisagismo e Área Externa',
+    description:
+      'Preparo e valorização de áreas externas, integrando estruturas de madeira ao paisagismo com canteiros e jardim bem cuidados.',
+    category: 'Marcenaria',
+    image: '/images/projects/projeto-1.jpeg',
+    alt: 'Área externa com canteiro de flores, gramado e palmeiras',
   },
 ]
 
-export const projectCategories = [
-  'Todos',
-  'Cozinha',
-  'Dormitório',
-  'Closet',
-  'Sala',
-  'Home Office',
-  'Área Gourmet',
-] as const
+export const projectCategories = ['Todos'] as const
