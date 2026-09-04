@@ -2,7 +2,7 @@ import type { SocialLink, WhatsAppConfig, NavItem } from '../types'
 
 /* === WhatsApp === */
 
-const WHATSAPP_NUMBER = '5519999999999'
+const WHATSAPP_NUMBER = '5511917791871'
 const WHATSAPP_MESSAGE = 'Olá! Vi seu portfólio e gostaria de solicitar um orçamento.'
 
 export const whatsappConfig: WhatsAppConfig = {
@@ -13,32 +13,7 @@ export const whatsappConfig: WhatsAppConfig = {
 
 /* === Redes Sociais === */
 
-export const socialLinks: SocialLink[] = [
-  {
-    id: 1,
-    platform: 'Instagram',
-    url: 'https://instagram.com/marcenariamartins',
-    label: '@marcenariamartins',
-  },
-  {
-    id: 2,
-    platform: 'Facebook',
-    url: 'https://facebook.com/marcenariamartins',
-    label: 'Marcenaria Martins',
-  },
-  {
-    id: 3,
-    platform: 'YouTube',
-    url: 'https://youtube.com/@marcenariamartins',
-    label: 'Marcenaria Martins',
-  },
-  {
-    id: 4,
-    platform: 'TikTok',
-    url: 'https://tiktok.com/@marcenariamartins',
-    label: '@marcenariamartins',
-  },
-]
+export const socialLinks: SocialLink[] = []
 
 /* === Navegação === */
 

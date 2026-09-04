@@ -25,7 +25,7 @@ export interface Project {
   alt: string
 }
 
-export type ProjectCategory = 'Marcenaria'
+export type ProjectCategory = 'Marcenaria' | 'Paisagismo'
 
 export interface PortfolioVideo {
   id: number
@@ -47,7 +47,6 @@ export interface ContactInfo {
   whatsapp: string
   email: string
   address: string
-  hours: string
 }
 
 export interface WhatsAppConfig {

@@ -2,15 +2,6 @@ import type { Project } from '../types'
 
 export const projects: Project[] = [
   {
-    id: 1,
-    title: 'Portão de Madeira Ripado',
-    description:
-      'Portão de correr em madeira maciça com acabamento envernizado, ripas alinhadas e fixação reforçada, integrado ao muro e ao paisagismo.',
-    category: 'Marcenaria',
-    image: '/images/projects/projeto-2.jpeg',
-    alt: 'Portão de madeira ripada com acabamento envernizado em tom mel',
-  },
-  {
     id: 2,
     title: 'Portão Duplo com Dobradiças',
     description:
@@ -63,6 +54,42 @@ export const projects: Project[] = [
     category: 'Marcenaria',
     image: '/images/projects/projeto-1.jpeg',
     alt: 'Área externa com canteiro de flores, gramado e palmeiras',
+  },
+  {
+    id: 8,
+    title: 'Revestimento Interno em Lambri',
+    description:
+      'Ambiente revestido em lambri de pinus, com paredes e teto forrados em madeira clara e acabamento que traz aconchego e valorização ao espaço.',
+    category: 'Marcenaria',
+    image: '/images/projects/projeto-8.jpeg',
+    alt: 'Cômodo com paredes e teto revestidos em lambri de madeira clara e piso amadeirado',
+  },
+  {
+    id: 9,
+    title: 'Parede em Lambri Envernizado',
+    description:
+      'Parede interna revestida em lambri de madeira com acabamento envernizado em tom mel, integrando a marcenaria ao ambiente da cozinha.',
+    category: 'Marcenaria',
+    image: '/images/projects/projeto-11.jpeg',
+    alt: 'Parede revestida em lambri de madeira envernizado em tom mel',
+  },
+  {
+    id: 10,
+    title: 'Roçada e Limpeza de Terreno',
+    description:
+      'Serviço de roçada e limpeza de áreas externas com roçadeira profissional, deixando o terreno organizado e bem cuidado.',
+    category: 'Paisagismo',
+    image: '/images/projects/projeto-9.jpeg',
+    alt: 'Profissional realizando roçada de mato ao lado de casa de madeira',
+  },
+  {
+    id: 11,
+    title: 'Manutenção de Área Externa',
+    description:
+      'Manutenção e capina de áreas externas junto ao alambrado, mantendo a propriedade limpa e valorizada durante todo o ano.',
+    category: 'Paisagismo',
+    image: '/images/projects/projeto-10.jpeg',
+    alt: 'Profissional roçando o mato próximo ao alambrado de uma propriedade',
   },
 ]
 

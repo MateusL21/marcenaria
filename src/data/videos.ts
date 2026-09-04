@@ -18,10 +18,27 @@ export const videos: PortfolioVideo[] = [
     poster: '/images/projects/projeto-4.jpeg',
   },
   {
-    id: 3,
-    title: 'Jardim Vertical em Madeira',
+    id: 4,
+    title: 'Revestimento em Madeira',
     description:
-      'Floreira/jardim vertical em madeira tratada, unindo marcenaria e paisagismo para valorizar áreas externas.',
-    poster: '/images/projects/marcearia8.jpg',
+      'Processo de revestimento de ambientes em lambri de madeira, do preparo à instalação com acabamento impecável.',
+    src: '/videos/marcenaria-3.mp4',
+    poster: '/images/projects/projeto-8.jpeg',
+  },
+  {
+    id: 5,
+    title: 'Estruturas de Madeira',
+    description:
+      'Bastidores da produção de estruturas e peças em madeira maciça, mostrando o cuidado artesanal em cada corte.',
+    src: '/videos/marcenaria-4.mp4',
+    poster: '/images/projects/projeto-3.jpeg',
+  },
+  {
+    id: 6,
+    title: 'Acabamento e Instalação',
+    description:
+      'Detalhes da etapa final de acabamento e instalação, garantindo qualidade e durabilidade em cada projeto.',
+    src: '/videos/marcenaria-5.mp4',
+    poster: '/images/projects/projeto-11.jpeg',
   },
 ]

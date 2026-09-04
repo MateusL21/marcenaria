@@ -2,13 +2,13 @@ import type { Professional, ContactInfo } from '../types'
 
 export const professional: Professional = {
   name: 'João Henrique Martins',
-  company: 'Marcenaria Martins',
+  company: 'Marcenaria Beto e Victor',
   role: 'Marceneiro / Especialista em Móveis Planejados',
-  location: 'Campinas - SP',
-  slogan: 'Móveis planejados que transformam ambientes.',
+  location: 'Região de Itu e São Paulo',
+  slogan: '',
   description:
     'Com mais de 15 anos de experiência em marcenaria e móveis planejados, ' +
-    'a Marcenaria Martins é referência em projetos personalizados para ' +
+    'a Marcenaria Beto e Victor é referência em projetos personalizados para ' +
     'cozinhas, dormitórios, closets, painéis, home offices e ambientes ' +
     'sob medida. Cada projeto é desenvolvido com atenção aos detalhes, ' +
     'materiais de alta qualidade e acabamento impecável, garantindo que ' +
@@ -25,9 +25,8 @@ export const professional: Professional = {
 }
 
 export const contactInfo: ContactInfo = {
-  phone: '+55 (19) 99999-9999',
-  whatsapp: '+55 (19) 99999-9999',
+  phone: '+55 (11) 91779-1871',
+  whatsapp: '+55 (11) 91779-1871',
   email: 'contato@marcenariamartins.com.br',
-  address: 'Campinas - SP',
-  hours: 'Seg a Sex: 8h às 18h | Sáb: 8h às 12h',
+  address: 'Região de Itu e São Paulo',
 }

@@ -1,13 +1,10 @@
 import { Container } from '../../components/layout/Container/Container'
-import { SectionTitle } from '../../components/common/SectionTitle/SectionTitle'
 import styles from './About.module.css'
 
 export function About() {
   return (
     <section id="sobre" className={styles.about}>
       <Container>
-        <SectionTitle title="Sobre Nós" />
-
         {/* Composição editorial: retrato dos donos */}
         <figure className={styles.composition}>
           <div

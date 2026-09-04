@@ -1,6 +1,6 @@
 import { Container } from '../Container/Container'
 import { professional, contactInfo } from '../../../data/professional'
-import { navItems, socialLinks, whatsappConfig } from '../../../data/socialLinks'
+import { navItems, whatsappConfig } from '../../../data/socialLinks'
 import styles from './Footer.module.css'
 
 export function Footer() {
@@ -13,9 +13,6 @@ export function Footer() {
           {/* Coluna 1: Empresa */}
           <div className={styles.footerCol}>
             <h3 className={styles.footerTitle}>{professional.company}</h3>
-            <p className={styles.footerText}>
-              {professional.slogan}
-            </p>
             <p className={styles.footerText}>
               {professional.location}
             </p>
@@ -49,14 +46,6 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href={`mailto:${contactInfo.email}`}
-                  className={styles.footerLink}
-                >
-                  {contactInfo.email}
-                </a>
-              </li>
-              <li>
-                <a
                   href={whatsappConfig.url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -65,25 +54,6 @@ export function Footer() {
                   WhatsApp
                 </a>
               </li>
-            </ul>
-          </div>
-
-          {/* Coluna 4: Redes Sociais */}
-          <div className={styles.footerCol}>
-            <h4 className={styles.footerSubtitle}>Redes Sociais</h4>
-            <ul className={styles.footerLinks}>
-              {socialLinks.map((link) => (
-                <li key={link.id}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.footerLink}
-                  >
-                    {link.platform}
-                  </a>
-                </li>
-              ))}
             </ul>
           </div>
         </div>

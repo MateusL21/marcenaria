@@ -2,7 +2,7 @@ import { Container } from '../../components/layout/Container/Container'
 import { SectionTitle } from '../../components/common/SectionTitle/SectionTitle'
 import { Button } from '../../components/common/Button/Button'
 import { contactInfo, professional } from '../../data/professional'
-import { whatsappConfig, socialLinks } from '../../data/socialLinks'
+import { whatsappConfig } from '../../data/socialLinks'
 import styles from './Contact.module.css'
 
 export function Contact() {
@@ -42,39 +42,8 @@ export function Contact() {
               {contactInfo.phone}
             </a>
 
-            <h4 className={styles.infoTitle}>E-mail</h4>
-            <a
-              href={`mailto:${contactInfo.email}`}
-              className={styles.infoLink}
-            >
-              {contactInfo.email}
-            </a>
-
             <h4 className={styles.infoTitle}>Localização</h4>
             <p className={styles.infoText}>{professional.location}</p>
-
-            <h4 className={styles.infoTitle}>Horário de Atendimento</h4>
-            <p className={styles.infoText}>{contactInfo.hours}</p>
-          </div>
-
-          {/* Redes Sociais */}
-          <div className={styles.socialCard}>
-            <h4 className={styles.infoTitle}>Redes Sociais</h4>
-            <ul className={styles.socialList}>
-              {socialLinks.map((link) => (
-                <li key={link.id}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.socialLink}
-                  >
-                    <span className={styles.socialPlatform}>{link.platform}</span>
-                    <span className={styles.socialLabel}>{link.label}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </Container>
